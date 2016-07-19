@@ -56,6 +56,7 @@
         <xs:element ref="SubstanceStrengthRange"/>
         <xs:element ref="IngredientRole"/>
         <xs:element ref="Method"/>
+        <xs:element ref="SSID"/>
         <xs:element ref="Package"/>
         <xs:group ref="RedactionElements"/>
       </xs:choice>
@@ -80,6 +81,7 @@
         <xs:element ref="Type"/>
         <xs:element ref="Quantity"/>
         <xs:element ref="Material"/>
+        <xs:element ref="PCID"/>
         <xs:group ref="RedactionElements"/>
       </xs:choice>
     </xs:complexType>
@@ -131,6 +133,14 @@
   </xs:element>
 
   <xs:element name="Concentration">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="SSID">
     <xs:complexType mixed="true">
       <xs:choice maxOccurs="unbounded" minOccurs="0">
         <xs:group ref="RedactionElements"/>
