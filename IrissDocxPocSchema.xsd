@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.ditaexchange.com/irissdocxpocschema"
+  xmlns="http://www.ditaexchange.com/irissdocxpocschema" elementFormDefault="qualified">
+
+  <!--
+    SCHEMA PROVENANCE:
+    2016-07-19 by Steffen Frederiksen, srf@ditaexchange.com, DitaExchange
+    This Schema was created for the IRISS DOCX POC project under this license:
+    GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+    http://choosealicense.com/licenses/gpl-3.0
+    Available on: 
+    https://github.com/DitaExchange/IRISSDOCXPOC
+  -->
+
+  <xs:element name="IrissDocxPoc">
+    <xs:annotation>
+      <xs:documentation>Root element</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="Manufacturer"/>
+        <xs:element ref="CommonProductName"/>
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Manufacturer">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="Company"/>
+        <xs:element ref="Responsibilities"/>
+        <xs:element ref="ManufacturingId"/>
+        <xs:element ref="DUNS"/>
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CommonProductName">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="ManDoseForm"/>
+        <xs:element ref="SpecSubstanceStrength"/>
+        <xs:element ref="PhPID"/>
+        <xs:element ref="ManItemColor"/>
+        <xs:element ref="ManItemSize"/>
+        <xs:element ref="ManItemImprint"/>
+        <xs:element ref="ManItemShape"/>
+        <xs:element ref="AdminDoseForm"/>
+        <xs:element ref="Substance"/>
+        <xs:element ref="SubstanceStrengthRange"/>
+        <xs:element ref="IngredientRole"/>
+        <xs:element ref="Method"/>
+        <xs:element ref="Package"/>
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Package">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="PackageDescription"/>
+        <xs:element ref="PCID"/>
+        <xs:element ref="Container"/>
+        <xs:element ref="Package"/>
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Container">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="Type"/>
+        <xs:element ref="Quantity"/>
+        <xs:element ref="Material"/>
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubstanceStrengthRange">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="Presentation"/>
+        <xs:element ref="Concentration"/>
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Method">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Concentration">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Presentation">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Material">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Quantity">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Type">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PCID">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PackageDescription">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IngredientRole">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Substance">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AdminDoseForm">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManItemShape">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManItemImprint">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManItemSize">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManItemColor">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PhPID">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SpecSubstanceStrength">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ManDoseForm">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Company">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="Name"/>
+        <xs:element ref="Address"/>
+        <xs:element ref="Town"/>
+        <xs:element ref="State"/>
+        <xs:element ref="Country"/>
+        <xs:element ref="Zip"/>
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="Name">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Address">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="CCI" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="PCI" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Town">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="State">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Country">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Zip">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Responsibilities">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ManufacturingId">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DUNS">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionEelements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:group name="RedactionEelements">
+    <xs:choice>
+      <xs:element ref="CCI"/>
+      <xs:element ref="PCI"/>
+    </xs:choice>
+  </xs:group>
+
+  <xs:element name="CCI">
+    <xs:annotation>
+      <xs:documentation>Corporate Confidential Information</xs:documentation>
+      <xs:documentation>For redacting use</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:any/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="PCI">
+    <xs:annotation>
+      <xs:documentation>Personal Confidential Information</xs:documentation>
+      <xs:documentation>For redacting use</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:any/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
