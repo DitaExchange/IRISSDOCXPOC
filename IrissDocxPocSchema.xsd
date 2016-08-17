@@ -115,6 +115,7 @@
     <xs:choice>
       <xs:element ref="CCI"/>
       <xs:element ref="PCI"/>
+      <xs:element ref="TemplateInstructions"/>
     </xs:choice>
   </xs:group>
 
@@ -364,6 +365,18 @@
     <xs:annotation>
       <xs:documentation>Personal Confidential Information</xs:documentation>
       <xs:documentation>For redacting use</xs:documentation>
+    </xs:annotation>
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:any/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="TemplateInstructions">
+    <xs:annotation>
+      <xs:documentation>Instructional text for the template user</xs:documentation>
+      <xs:documentation>For template and filtering use</xs:documentation>
     </xs:annotation>
     <xs:complexType mixed="true">
       <xs:choice maxOccurs="unbounded" minOccurs="0">
