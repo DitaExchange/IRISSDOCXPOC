@@ -9,6 +9,10 @@
     http://choosealicense.com/licenses/gpl-3.0
     Available on: 
     https://github.com/DitaExchange/IRISSDOCXPOC
+    
+    MAINTENANCE HISTORY:
+    2016-08-17/Steffen Frederiksen, DitaExchange:
+    Added a TemplateInstructions element to Redactions group
   -->
 
   <xs:annotation>
