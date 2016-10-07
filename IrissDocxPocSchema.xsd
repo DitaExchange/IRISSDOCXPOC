@@ -11,8 +11,13 @@
     https://github.com/DitaExchange/IRISSDOCXPOC
     
     MAINTENANCE HISTORY:
+    
     2016-08-17/Steffen Frederiksen, DitaExchange:
     Added a TemplateInstructions element to Redactions group
+    
+    2016-10-05/Steffen Frederiksen, DitaExchange:
+    Added multiple new elements and structures to accommodate
+    the new stability data documents.
   -->
 
   <xs:annotation>
@@ -24,6 +29,7 @@
       <xs:choice maxOccurs="unbounded" minOccurs="0">
         <xs:element ref="Manufacturer"/>
         <xs:element ref="CommonProductName"/>
+        <xs:element ref="Stability"/>
         <xs:group ref="RedactionElements"/>
       </xs:choice>
     </xs:complexType>
@@ -376,7 +382,7 @@
       </xs:choice>
     </xs:complexType>
   </xs:element>
-  
+
   <xs:element name="TemplateInstructions">
     <xs:annotation>
       <xs:documentation>Instructional text for the template user</xs:documentation>
@@ -385,6 +391,122 @@
     <xs:complexType mixed="true">
       <xs:choice maxOccurs="unbounded" minOccurs="0">
         <xs:any/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="BatchNumber">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ApiLot">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ManufactureDate">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="FillVialVol">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Size">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="StudyCondition">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="StabilityTestForm">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="StabilityTestUse">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DrugProductName">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="DosageForm">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Batch">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="BatchNumber"/>
+        <xs:element ref="ApiLot"/>
+        <xs:element ref="ManufactureDate"/>
+        <xs:element ref="FillVialVol"/>
+        <xs:element ref="Size"/>
+        <xs:element ref="StudyCondition"/>
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="StabilityTest">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="StabilityTestForm"/>
+        <xs:element ref="StabilityTestUse"/>
+        <xs:element ref="Batch"/>
+        <xs:group ref="RedactionElements"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Stability">
+    <xs:complexType mixed="true">
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element ref="DrugProductName"/>
+        <xs:element ref="DosageForm"/>
+        <xs:element ref="StabilityTest"/>
+        <xs:group ref="RedactionElements"/>
       </xs:choice>
     </xs:complexType>
   </xs:element>
