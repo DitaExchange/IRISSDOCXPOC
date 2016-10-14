@@ -368,6 +368,7 @@
       <xs:choice maxOccurs="unbounded" minOccurs="0">
         <xs:any/>
       </xs:choice>
+      <xs:attribute name="Reason" type="xs:string"/>
     </xs:complexType>
   </xs:element>
 
@@ -380,6 +381,7 @@
       <xs:choice maxOccurs="unbounded" minOccurs="0">
         <xs:any/>
       </xs:choice>
+      <xs:attribute name="Reason" type="xs:string"/>
     </xs:complexType>
   </xs:element>
 
